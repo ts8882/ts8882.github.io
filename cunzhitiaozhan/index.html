@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>寸止挑战buy1take2-寸止挑战规则玩法_节奏控制训练_自控挑战合集</title>
+<meta name="description" content="寸止挑战buy1take2 是一个围绕节奏控制与自控练习的主题挑战页，介绍寸止挑战的基本规则、buy1take2 组合玩法、分段训练方法与记录复盘方式，帮助访问者理解挑战节奏、准备清单与常见问题。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131a2b'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23ffb454' stroke-width='4'/%3E%3Cpath d='M32 15v17l11 7' fill='none' stroke='%23ffb454' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0e1320;
+    --bg-soft:#151c2c;
+    --card:#1b2334;
+    --line:#2b3549;
+    --text:#e8edf6;
+    --muted:#9aa7bd;
+    --accent:#ffb454;
+    --accent-2:#5fd3c4;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(14,19,32,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;letter-spacing:.2px}
+  .logo .mark{width:34px;height:34px;flex:0 0 auto}
+  .logo span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  nav ul{display:flex;gap:22px;list-style:none;font-size:14.5px;color:var(--muted)}
+  nav a:hover{color:var(--accent)}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 16px;border-radius:999px;
+    background:linear-gradient(135deg,#ffb454,#ff8f3c);
+    color:#1a1206;font-weight:700;font-size:14px;
+  }
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;color:var(--text);padding:6px 10px;font-size:16px}
+
+  /* hero */
+  .hero{padding:58px 0 46px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero::after{
+    content:"";position:absolute;right:-140px;top:-120px;width:420px;height:420px;
+    background:radial-gradient(circle,rgba(95,211,196,.16),transparent 68%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  .tagline{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent-2);
+    border:1px solid rgba(95,211,196,.35);border-radius:999px;padding:4px 13px;margin-bottom:18px;
+    background:rgba(95,211,196,.07);
+  }
+  h1{font-size:clamp(26px,4.2vw,42px);line-height:1.28;font-weight:800;letter-spacing:.3px}
+  h1 .hl{color:var(--accent)}
+  .lede{margin-top:16px;color:var(--muted);font-size:16px;max-width:34em}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;border:1px solid transparent;
+  }
+  .btn-primary{background:linear-gradient(135deg,#ffb454,#ff8f3c);color:#1a1206}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:var(--bg-soft)}
+  .btn-ghost:hover{border-color:var(--accent-2);color:var(--accent-2)}
+  .hero-stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+  .hero-stats div{font-size:13px;color:var(--muted)}
+  .hero-stats b{display:block;font-size:20px;color:var(--text);font-weight:800}
+  .hero-art{
+    background:linear-gradient(160deg,#1d2639,#141b29);
+    border:1px solid var(--line);border-radius:20px;padding:24px;
+  }
+  .hero-art h3{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:14px;letter-spacing:.5px}
+  .beat-list{list-style:none;display:grid;gap:10px}
+  .beat-list li{
+    display:flex;align-items:center;gap:12px;font-size:14px;
+    background:#0f1626;border:1px solid var(--line);border-radius:10px;padding:10px 12px;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+  .dot.teal{background:var(--accent-2)}
+  .dot.dim{background:#4a5670}
+
+  /* section basics */
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(20px,2.6vw,26px);font-weight:800}
+  .sec-head p{color:var(--muted);font-size:14.5px;max-width:44em;margin-top:6px}
+  .kicker{font-size:12.5px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:8px;font-weight:700}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;display:flex;flex-direction:column;gap:10px;
+  }
+  .card h3{font-size:16.5px;font-weight:700}
+  .card p{font-size:14.5px;color:var(--muted)}
+  .card .ico{width:38px;height:38px;border-radius:10px;background:rgba(255,180,84,.12);display:grid;place-items:center;color:var(--accent)}
+  .card.teal .ico{background:rgba(95,211,196,.12);color:var(--accent-2)}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+  .step{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;position:relative;
+  }
+  .step::before{
+    counter-increment:s;content:"0" counter(s);
+    font-size:13px;font-weight:800;color:var(--accent);letter-spacing:1px;
+  }
+  .step h3{font-size:15.5px;margin:8px 0 6px}
+  .step p{font-size:14px;color:var(--muted)}
+
+  /* split content */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+  .prose p{font-size:15.5px;color:#c6d0e0;margin-bottom:14px}
+  .prose p strong{color:var(--text)}
+  .prose h3{font-size:17px;margin:22px 0 10px;color:var(--text)}
+  .checklist{list-style:none;display:grid;gap:10px;margin-top:6px}
+  .checklist li{
+    display:flex;gap:10px;font-size:14.5px;color:var(--muted);
+    background:#111827;border:1px solid var(--line);border-radius:10px;padding:11px 13px;
+  }
+  .checklist li svg{flex:0 0 auto;margin-top:3px;color:var(--accent-2)}
+
+  /* table-ish rules */
+  .rules{display:grid;gap:12px;margin-top:8px}
+  .rule{
+    display:grid;grid-template-columns:150px 1fr;gap:16px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+  }
+  .rule dt{font-weight:700;font-size:14.5px;color:var(--accent)}
+  .rule dd{font-size:14.5px;color:var(--muted)}
+
+  /* faq */
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;margin-bottom:12px;
+  }
+  details summary{
+    cursor:pointer;font-size:15.5px;font-weight:600;list-style:none;
+    display:flex;justify-content:space-between;gap:12px;align-items:center;
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";color:var(--accent);font-size:18px;font-weight:700}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:12px;font-size:14.5px;color:var(--muted)}
+
+  /* download */
+  .download{
+    display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;
+    background:linear-gradient(140deg,#1c2436,#131a28);
+    border:1px solid var(--line);border-radius:18px;padding:30px;
+  }
+  .download h2{font-size:22px;margin-bottom:10px}
+  .download p{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+  .btn-disabled{
+    background:#2a3448;color:#8d9ab2;border:1px solid #3a465d;
+    pointer-events:none;cursor:default;
+  }
+  .dl-meta{font-size:12.5px;color:#6c7a93;margin-top:10px}
+  .dl-art{display:grid;place-items:center}
+
+  /* footer */
+  footer{padding:40px 0 34px;color:var(--muted);font-size:13.5px}
+  .foot-grid{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;align-items:flex-start}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--text);font-size:15px}
+  .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+  .foot-links a:hover{color:var(--accent)}
+  .copy{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#6c7a93}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .split{grid-template-columns:1fr;gap:26px}
+    .download{grid-template-columns:1fr}
+    .rule{grid-template-columns:1fr;gap:6px}
+  }
+  @media (max-width:640px){
+    .bar{height:60px}
+    nav ul{
+      display:none;position:absolute;top:60px;left:0;right:0;
+      background:#131a28;border-bottom:1px solid var(--line);
+      flex-direction:column;gap:0;padding:8px 22px 16px;
+    }
+    nav ul.open{display:flex}
+    nav ul li{padding:10px 0;border-bottom:1px dashed #232d41}
+    nav ul li:last-child{border-bottom:none}
+    .nav-cta{display:none}
+    .menu-toggle{display:block}
+    .grid-3,.steps{grid-template-columns:1fr}
+    .hero{padding:38px 0 34px}
+    section{padding:42px 0}
+    .download{padding:22px}
+    .hero-stats{gap:18px}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="寸止挑战buy1take2 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b2334"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#ffb454" stroke-width="4"/>
+        <path d="M32 15v17l11 7" fill="none" stroke="#ffb454" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span>寸止挑战buy1take2</span>
+    </a>
+    <nav aria-label="主导航">
+      <ul id="navList">
+        <li><a href="#intro">玩法概览</a></li>
+        <li><a href="#rules">规则说明</a></li>
+        <li><a href="#steps">分段训练</a></li>
+        <li><a href="#methods">节奏方法</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#download">获取清单</a>
+    <button class="menu-toggle" id="menuBtn" aria-label="展开导航" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="border-bottom:1px solid var(--line)">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tagline">节奏控制 · 自控练习 · 组合挑战</span>
+        <h1>寸止挑战buy1take2</h1>
+        <p class="lede">
+          寸止挑战buy1take2 是一个以“停顿—重启”为核心的节奏练习主题：在指定节拍点主动停住动作，再按 buy1take2 的组合顺序完成一轮完整循环。页面整理规则、分段练习与复盘方法，帮助你按自己的节奏稳定进入挑战。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#rules">查看挑战规则</a>
+          <a class="btn btn-ghost" href="#steps">从分段训练开始</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>4</b>训练阶段</div>
+          <div><b>2</b>组合循环</div>
+          <div><b>1</b>份记录模板</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <h3>一轮 buy1take2 节奏示意</h3>
+        <ul class="beat-list">
+          <li><span class="dot"></span>第 1 拍：进入节奏，保持匀速</li>
+          <li><span class="dot teal"></span>第 2 拍：寸止停顿，稳定呼吸</li>
+          <li><span class="dot"></span>第 3 拍：重启动作，回到基准速度</li>
+          <li><span class="dot dim"></span>第 4 拍：完成一轮，记录感受</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section id="intro">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Overview</div>
+          <h2>寸止挑战buy1take2 是什么</h2>
+          <p>先理解名字里的三个部分，再决定自己从哪一档难度进入，是完成寸止挑战buy1take2 的稳妥方式。</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+          </div>
+          <h3>寸止：在动作中途停住</h3>
+          <p>“寸止”强调在接近既定节拍点时收住动作，让身体记住停顿的位置。它是寸止挑战buy1take2 的基础动作单元，也是整套练习里最需要耐心的一环。</p>
+        </article>
+        <article class="card teal">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>
+          </div>
+          <h3>buy1take2：买一得二式组合</h3>
+          <p>buy1take2 指的是“一次动作、两次完成”的循环结构：先完整走一遍基准节奏，再重复一次并叠加停顿。组合让单次训练量更清晰。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <h3>挑战：以记录驱动进步</h3>
+          <p>挑战的价值在于可比较。每轮结束后记下停顿次数、稳定程度和主观难度，下一轮再对照调整，寸止挑战buy1take2 才有连续进步的依据。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Rules</div>
+          <h2>挑战规则与准备清单</h2>
+          <p>规则越简单，执行越稳定。以下条目用于统一每一轮的判断标准，避免不同场次之间难以对比。</p>
+        </div>
+      </div>
+      <dl class="rules">
+        <div class="rule">
+          <dt>节拍基准</dt>
+          <dd>先以自己能稳定完成的匀速节拍作为基准，整轮 buy1take2 循环不随意加快，确保停顿点位置可复现。</dd>
+        </div>
+        <div class="rule">
+          <dt>停顿判定</dt>
+          <dd>动作在指定位置完全停住并保持一次呼吸时长，视为一次有效寸止；提前泄力或位置偏移则不计入。</dd>
+        </div>
+        <div class="rule">
+          <dt>组合顺序</dt>
+          <dd>一轮包含基准段与叠加段各一次，顺序固定为先基准后叠加，中途不跳过，避免组合结构被拆散。</dd>
+        </div>
+        <div class="rule">
+          <dt>结束条件</dt>
+          <dd>当动作质量明显下降或呼吸节奏紊乱时立即结束本轮，记录结束时的阶段，作为下一轮的起点参考。</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section id="steps">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Training Path</div>
+          <h2>四个阶段进入寸止挑战buy1take2</h2>
+          <p>不要一次跨到最高难度。按阶段推进，每个阶段至少完成数轮再决定是否进入下一阶段。</p>
+        </div>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <h3>熟悉节拍</h3>
+          <p>只做匀速动作，不加停顿，记录能保持稳定的时长与呼吸频率，为后续寸止建立基线。</p>
+        </article>
+        <article class="step">
+          <h3>单点寸止</h3>
+          <p>在一轮中只安排一次停顿，位置固定在动作中段，重点体会收住的那一瞬间是否干净。</p>
+        </article>
+        <article class="step">
+          <h3>组合循环</h3>
+          <p>加入 buy1take2 结构，先基准段后叠加段，观察第二次执行时停顿是否仍然准确。</p>
+        </article>
+        <article class="step">
+          <h3>记录复盘</h3>
+          <p>对照记录表回看每轮停顿次数与质量，找出最容易失稳的节拍点，作为下一轮重点。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODS -->
+  <section id="methods">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Method</div>
+          <h2>让节奏更稳的三个方法</h2>
+          <p>方法不追求复杂，只解决三轮之后最容易出现的问题：节奏漂移、呼吸变浅和注意力分散。</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="prose">
+          <h3>用呼吸锚定停顿位置</h3>
+          <p>在寸止挑战buy1take2 的执行中，停顿最容易因为呼吸混乱而变形。建议把停顿与一次完整呼气绑定：动作到位即开始呼气，呼气结束时停顿也结束。这样停顿长度由呼吸自然决定，不需要额外数秒，也不会因注意力转移而忽长忽短。</p>
+          <h3>把组合拆成可核对的小段</h3>
+          <p>buy1take2 的组合结构看起来简单，但连续执行时容易在第二次循环里丢掉停顿。把一轮拆成基准段和叠加段并分别核对，比整轮结束后凭印象判断更可靠。每次只关注当前小段是否达标，注意力就不会被后续步骤分散。</p>
+        </div>
+        <div>
+          <h3 style="font-size:16px;margin-bottom:12px">每轮开始前的准备清单</h3>
+          <ul class="checklist">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
+              确认本轮节拍基准与上一轮一致
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
+              明确本轮停顿点的具体位置
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
+              准备好记录停顿次数与感受的表格
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
+              设定本轮结束条件，避免硬撑
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
+              结束后留出几分钟做简短复盘
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">FAQ</div>
+          <h2>关于寸止挑战buy1take2 的常见问题</h2>
+          <p>下面这些问题集中在入门判断与执行细节，适合在第一次尝试前先读一遍。</p>
+        </div>
+      </div>
+      <details open>
+        <summary>新手应该从哪个阶段开始？</summary>
+        <p>从“熟悉节拍”开始，先确认自己能在不加停顿的情况下保持稳定。等到节奏不再需要刻意控制，再进入单点寸止，这样寸止挑战buy1take2 的停顿质量才有比较基础。</p>
+      </details>
+      <details>
+        <summary>buy1take2 的“买一得二”具体指什么？</summary>
+        <p>它描述的是一轮动作的组成方式：完成一次基准节奏，再复制一次并加入停顿，形成“一次购买、两次执行”的循环结构。重点是结构固定，而不是追求数量。</p>
+      </details>
+      <details>
+        <summary>停顿时间越长越好吗？</summary>
+        <p>不是。停顿的价值在于位置准确和动作干净。过长停顿容易带来呼吸紊乱，反而影响下一段重启。以一次自然呼气时长为参考更稳妥。</p>
+      </details>
+      <details>
+        <summary>需要记录哪些内容？</summary>
+        <p>建议记录本轮节拍、有效停顿次数、失稳出现的节拍点以及主观难度。连续几轮后，这些记录能直接指出寸止挑战buy1take2 中哪一段最需要单独练习。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download" style="border-bottom:none">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h2>下载挑战记录清单</h2>
+          <p>清单包含节拍基准、停顿记录与复盘栏位，可打印使用，也可以按自己的习惯调整栏目顺序，配合寸止挑战buy1take2 的分段训练推进。</p>
+          <a class="btn btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+          <div class="dl-meta">清单为可编辑模板，下载入口开放后即可获取。</div>
+        </div>
+        <div class="dl-art" aria-hidden="true">
+          <svg width="150" height="150" viewBox="0 0 120 120" fill="none">
+            <rect x="18" y="12" width="84" height="96" rx="10" fill="#1b2334" stroke="#2b3549" stroke-width="2"/>
+            <rect x="30" y="28" width="46" height="6" rx="3" fill="#ffb454"/>
+            <rect x="30" y="44" width="58" height="5" rx="2.5" fill="#3a465d"/>
+            <rect x="30" y="56" width="58" height="5" rx="2.5" fill="#3a465d"/>
+            <rect x="30" y="68" width="40" height="5" rx="2.5" fill="#3a465d"/>
+            <circle cx="82" cy="88" r="14" fill="none" stroke="#5fd3c4" stroke-width="2.5"/>
+            <path d="M76 88l4 4 8-9" stroke="#5fd3c4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1b2334"/>
+            <circle cx="32" cy="32" r="17" fill="none" stroke="#ffb454" stroke-width="4"/>
+            <path d="M32 15v17l11 7" fill="none" stroke="#ffb454" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <span>寸止挑战buy1take2</span>
+        </div>
+        <p style="margin-top:10px;max-width:26em">围绕节奏控制与自控练习的主题挑战页，提供规则说明、分段训练与复盘方法。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#intro">玩法概览</a>
+        <a href="#rules">规则说明</a>
+        <a href="#steps">分段训练</a>
+        <a href="#methods">节奏方法</a>
+        <a href="#faq">常见问题</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>寸止挑战buy1take2 · 内容仅供练习参考，请量力而行</span>
+      <span>© 2024 寸止挑战buy1take2</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var list = document.getElementById('navList');
+    if(!btn || !list) return;
+    btn.addEventListener('click', function(){
+      var open = list.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? '✕' : '☰';
+    });
+    list.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        list.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        btn.textContent = '☰';
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
